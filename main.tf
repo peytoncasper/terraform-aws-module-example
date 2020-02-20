@@ -1,7 +1,7 @@
 resource "aws_security_group" "default" {
   name_prefix = "test_instance"
 
-  count = var.num
+  count = var.instance_count
 
   ingress {
     from_port   = 22
@@ -27,7 +27,7 @@ resource "aws_instance" "web" {
   ami           = "ami-c62eaabe"
   instance_type = var.instance_type
 
-  count = var.num
+  count = var.instance_count
 
   vpc_security_group_ids = [aws_security_group.default.id]
 
