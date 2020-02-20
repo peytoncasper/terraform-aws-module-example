@@ -29,7 +29,7 @@ resource "aws_instance" "web" {
 
   count = var.instance_count
 
-  vpc_security_group_ids = [aws_security_group.default.id]
+  vpc_security_group_ids = [aws_security_group.default[0].id]
 
 
   tags = {
