@@ -1,6 +1,8 @@
 resource "aws_security_group" "default" {
   name_prefix = "test_instance"
 
+  count = var.num
+
   ingress {
     from_port   = 22
     to_port     = 22
