@@ -24,7 +24,7 @@ resource "aws_security_group" "default" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-c62eaabe"
+  ami           = "ami-18dd6c70"
   instance_type = var.instance_type
 
   count = var.instance_count
